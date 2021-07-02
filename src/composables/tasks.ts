@@ -1,4 +1,4 @@
-import { ref, reactive, computed, toRef } from '@nuxtjs/composition-api'
+import { ref, computed } from '@nuxtjs/composition-api'
 import { v4 as uuidv4 } from 'uuid'
 
 interface Task {
@@ -37,10 +37,11 @@ const deleteTask = (id: string) => {
 	}
 }
 
-// TODO: create a function to delete multiple tasks
-// const deleteTasks = (tasks: Task[]) => {
-// 	tasks.forEach()
-// }
+const deleteTasks = (tasks: Task[]) => {
+	tasks.forEach((task) => {
+		deleteTask(task.id)
+	})
+}
 
 const createTask = (text: string) => {
 	const task: Task = {
@@ -64,6 +65,7 @@ export default () => ({
 	createTask,
 	updateTask,
 	deleteTask,
+	deleteTasks,
 	fetchTasks,
 	pending,
 	done,

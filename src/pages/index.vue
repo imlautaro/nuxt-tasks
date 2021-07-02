@@ -10,7 +10,12 @@
 		<p v-else>
 			You don't have pending tasks.
 		</p>
-		<h3>Completed tasks</h3>
+		<h3>
+			Completed tasks
+			<button v-if="done.length" @click="deleteTasks(done)">
+				Delete all
+			</button>
+		</h3>
 		<ul v-if="done.length">
 			<li v-for="task in done" :key="task.id">
 				<task :task="task" />
@@ -31,8 +36,8 @@ export default defineComponent({
 		}
 	},
 	setup() {
-		const { done, pending, updateTask, deleteTask } = useTasks()
-		return { done, pending, updateTask, deleteTask }
+		const { done, pending, deleteTasks } = useTasks()
+		return { done, pending, deleteTasks }
 	},
 })
 </script>
