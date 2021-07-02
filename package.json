@@ -1,0 +1,26 @@
+{
+	"name": "nuxt-tasks",
+	"description": "Tasks project with NuxtJS",
+	"author": {
+		"email": "dev.lautaropereyra@gmail.com",
+		"url": "https://imlautaro.com",
+		"name": "Lautaro Pereyra"
+	},
+	"license": "MIT",
+	"main": "nuxt.config.ts",
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt generate",
+		"start": "nuxt start"
+	},
+	"dependencies": {
+		"nuxt": "^2.15.7",
+		"uuid": "^8.3.2"
+	},
+	"devDependencies": {
+		"@nuxt/types": "^2.15.7",
+		"@nuxt/typescript-build": "^2.1.0",
+		"@nuxtjs/composition-api": "^0.24.5",
+		"@types/uuid": "^8.3.0"
+	}
+}
